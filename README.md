@@ -1,6 +1,6 @@
-## Why so serious with JavaScript
+## JS Tips and Tricks
 ---
-~~Think twice~~ Think thrice then write JavaScript
+~~Think twice~~ Think thrice before work with numbers!
 
 
 ```javascript
