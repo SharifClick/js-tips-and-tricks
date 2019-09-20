@@ -1,4 +1,10 @@
 ## JS Tips and Tricks
+
+---
+Another way of IIFE
+```javascript
+    !function(){console.log('hi')}()
+```
 ---
 ~~Think twice~~ Think thrice before work with numbers!
 
