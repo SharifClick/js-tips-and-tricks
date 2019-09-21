@@ -4,6 +4,11 @@ Another way of IIFE
 ```javascript
     !function(){console.log('hi')}()
 ```
+A simple range function (not iterable)
+```javascript
+    let range = (start, end) => [...Array((end ? (end-start) : start))].map((_, i) => end ? (i+start) : i);
+```
+
 ~~Think twice~~ Think thrice before work with numbers!
 
 
