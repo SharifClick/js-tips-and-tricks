@@ -6,7 +6,8 @@ Another way of IIFE
 ```
 A simple range function (not iterable)
 ```javascript
-    let range = (start, end) => [...Array((end ? (end-start) : start))].map((_, i) => end ? (i+start) : i);
+    let range = (start, end) => [...Array(Math.ceil(((end ? (end-start) : start) / step)))].map((_, i) => end ? (i+start) : i);
+    var srange = (s, e, r = 1) => [...Array(Math.ceil(((e ? (e-s) : s) / r)))].map((_, i) => e ? (i*r+s) : i*r+s);
 ```
 
 ~~Think twice~~ Think thrice before work with numbers!
