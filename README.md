@@ -1,4 +1,4 @@
-## JS Tips and Tricks
+## JS Tips and Tricks WIP
 
 Another way of IIFE
 ```javascript
