@@ -7,15 +7,19 @@ Another way of IIFE
 Cast a list of primitive values to a different type
 ```javascript
 
-/* Sometimes endpoints or processed data from the DOM doesn't return the type of values we need, I have seen this especially happening when processing dataset properties. Let's say we have the following list: */
+    // Sometimes endpoints or processed data from the DOM doesn't return the type of values we need,
+    // I have seen this especially happening when processing dataset properties. Let's say we have the following list:
 
-const naiveList = ['1500', '1350', '4580'];
+    const naiveList = ['1500', '1350', '4580'];
 
-/* We want to execute a sum of all the elements in the array, in JavaScript if you "sum" two strings like '1' + '2' they will concatenate, generally, to solve this we would leverage the parseInt function, but there is another way; We can cast the elements in the array to the type of primitive we need: */
+    // We want to execute a sum of all the elements in the array, 
+    // in JavaScript if you "sum" two strings like '1' + '2' they will concatenate, 
+    // generally, to solve this we would leverage the parseInt function, 
+    // but there is another way; We can cast the elements in the array to the type of primitive we need:
 
-const castedList = naiveList.map(Number);
+    const castedList = naiveList.map(Number);
 
-//castedList now contains the values with the correct Number type.
+    //castedList now contains the values with the correct Number type.
 ```
 
 ~~Think twice~~ Think thrice before work with numbers!
