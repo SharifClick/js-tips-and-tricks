@@ -4,10 +4,18 @@ Another way of IIFE
 ```javascript
     !function(){console.log('hi')}()
 ```
-A simple range function (not iterable)
+Cast a list of primitive values to a different type
 ```javascript
-    let range = (start, end) => [...Array(Math.ceil(((end ? (end-start) : start) / step)))].map((_, i) => end ? (i+start) : i);
-    var srange = (s, e, r = 1) => [...Array(Math.ceil(((e ? (e-s) : s) / r)))].map((_, i) => e ? (i*r+s) : i*r+s);
+
+/* Sometimes endpoints or processed data from the DOM doesn't return the type of values we need, I have seen this especially happening when processing dataset properties. Let's say we have the following list: */
+
+const naiveList = ['1500', '1350', '4580'];
+
+/* We want to execute a sum of all the elements in the array, in JavaScript if you "sum" two strings like '1' + '2' they will concatenate, generally, to solve this we would leverage the parseInt function, but there is another way; We can cast the elements in the array to the type of primitive we need: */
+
+const castedList = naiveList.map(Number);
+
+//castedList now contains the values with the correct Number type.
 ```
 
 ~~Think twice~~ Think thrice before work with numbers!
