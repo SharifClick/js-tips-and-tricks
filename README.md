@@ -12,6 +12,21 @@ Cast a list of primitive values to a different type
     // castedList = [1500, 1350, 4580]
 ```
 
+Checking 'falsy' props much easier than u think :D
+```javascript
+    // In some cases you need to check if prop has a 'falsy' value, then your code maybe....
+    
+    if(value != 'undefined' || value != null || value != '' || value != NaN || value != 0){
+        // do something
+    }
+   
+   // you can do same thing..
+   
+   if(!!value){
+        // do something
+    }
+```
+
 ~~Think twice~~ Think thrice before work with numbers!
 
 
