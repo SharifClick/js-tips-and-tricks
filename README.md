@@ -26,6 +26,27 @@ Checking 'falsy' props much easier than u think :D
         // do something
     }
 ```
+Filtering javascript array 
+
+```javascript
+ var data = { 
+    string : 'AbCd',
+    number : 1234,
+    bool_f : false,
+    bool_t : true,
+    _undefined : undefined,
+    _null : null
+ }
+ 
+ var arr = [ data.string, data.number, data.bool_f, data.bool_t, data._undefined, data._null ] ;
+ 
+ //Now  here is the trick.this will filter all  garbage data like undefined or null or false and return rest
+  arr.filter(Boolean).join(', '); 
+  
+ //result  "AbCd, 1234, true"
+
+ ```
+
 
 ~~Think twice~~ Think thrice before work with numbers!
 
