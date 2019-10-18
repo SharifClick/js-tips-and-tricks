@@ -30,20 +30,21 @@ Filtering javascript array
 
 ```javascript
  var data = { 
-    string : 'AbCd',
-    number : 1234,
-    bool_f : false,
-    bool_t : true,
-    _undefined : undefined,
-    _null : null
+    title: "",
+    name : 'Jhon',
+    surname:'Doe',
+    age : 34,
+    addr1 : undefined,
+    addr2 : null,
+    
  }
  
- var arr = [ data.string, data.number, data.bool_f, data.bool_t, data._undefined, data._null ] ;
+ var arr = [ data.title, data.name, data.surname, data.age, data.addr1, data.addr2 ] ;
  
  //Now  here is the trick.this will filter all  garbage data like undefined or null or false and return rest
   arr.filter(Boolean).join(', '); 
   
- //result  "AbCd, 1234, true"
+ //result  "Jhon, Doe, 34"
 
  ```
 
