@@ -30,21 +30,17 @@ A trick that can normalize fetched data
 
 ```javascript
  var data = { 
-    title: "",
-    name : 'Jhon',
-    surname:'Doe',
-    age : 34,
-    addr1 : undefined,
-    addr2 : null,
-    
- }
- 
- var arr = [ data.title, data.name, data.surname, data.age, data.addr1, data.addr2 ] ;
- 
- //Now  here is the trick.this will filter all  garbage data like undefined or null or false and return rest
-  arr.filter(Boolean).join(', '); 
-  
- //result  "Jhon, Doe, 34"
+    title : '',
+    name : 'Jhon Doe',
+    present_addr : '1255 Heron Way',
+    permanent_addr : undefined,
+    mobile: '503-804-1602',
+    phone : null
+  }
+//this will filter all garbage data like undefined or null or false and return rest
+let details = [...Object.values(data)].filter(Boolean).join(', ')
+
+//now `details` contains "Jhon Doe, 1255 Heron Way, 503-804-1602"
 
  ```
 
