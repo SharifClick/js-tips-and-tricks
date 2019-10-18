@@ -26,7 +26,7 @@ Checking 'falsy' props much easier than u think :D
         // do something
     }
 ```
-Filtering javascript array 
+A trick that can normalize fetched data  
 
 ```javascript
  var data = { 
