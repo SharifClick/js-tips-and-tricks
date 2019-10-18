@@ -26,9 +26,10 @@ Checking 'falsy' props much easier than u think :D
         // do something
     }
 ```
-A trick that can normalize fetched data  
+A tricky way to normalize fetched data  
 
 ```javascript
+
  var data = { 
     title : '',
     name : 'Jhon Doe',
@@ -37,10 +38,12 @@ A trick that can normalize fetched data
     mobile: '503-804-1602',
     phone : null
   }
-//this will filter all garbage data like undefined or null or false and return rest
-let details = [...Object.values(data)].filter(Boolean).join(', ')
+  
+  //this will filter all garbage data like undefined or null or false and return rest
+  
+  let details = [...Object.values(data)].filter(Boolean).join(', ')
 
-//now `details` contains "Jhon Doe, 1255 Heron Way, 503-804-1602"
+  //now `details` contains "Jhon Doe, 1255 Heron Way, 503-804-1602"
 
  ```
 
