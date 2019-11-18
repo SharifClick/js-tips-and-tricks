@@ -185,6 +185,22 @@ poll(function() {
 });
 ```
 
+###### matchesSelector
+```javascript
+
+//We can validate our element before move ahead
+
+    function matchesSelector(el, selector) {
+    var p = Element.prototype;
+    var f = p.matches || p.webkitMatchesSelector || p.mozMatchesSelector || p.msMatchesSelector || function(s) {
+        return [].indexOf.call(document.querySelectorAll(s), this) !== -1;
+    };
+    return f.call(el, selector);
+}
+// Usage
+matchesSelector(document.getElementById('myDiv'), 'div.someSelector[some-attribut]')
+```
+
 
 ~~Think twice~~ Think thrice before work with numbers!
 
