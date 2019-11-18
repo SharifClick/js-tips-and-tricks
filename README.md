@@ -124,6 +124,32 @@ console.log(style.sheet.cssRules); // length is 1, rule added
 
 ```
 
+###### once
+```javascript
+// it only runs one time for a page, 
+//this avoid duplicating initializations
+
+function once(fn, context) {
+    var result;
+    return function() {
+        if (fn) {
+            result = fn.apply(context || this, arguments);
+            fn = null;
+        }
+        return result;
+    };
+}
+// Usage
+// it is used while calling a function 
+//not when defining a function
+var canOnlyFireOnce = once(function() {
+    console.log('Fired!');
+});
+canOnlyFireOnce(); // "Fired!"
+canOnlyFireOnce(); // nada
+
+```
+
 
 ~~Think twice~~ Think thrice before work with numbers!
 
