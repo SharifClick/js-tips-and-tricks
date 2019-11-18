@@ -46,6 +46,42 @@ A tricky way to normalize fetched data
   //now `details` contains "Jhon Doe, 1255 Heron Way, 503-804-1602"
 
  ```
+ 
+ Some essential functions for Good Practice   
+ ###### Debounce
+```html
+
+<!--Dbouncing means delaying any function to run until the right time come -->
+<!--usages: any frequently fired event  like resize, scroll, key-->
+
+<!--Returns a function, that, as long as it continues to be invoked, will not-->
+<!--be triggered. The function will be called after it stops being called for-->
+<html>  
+<body> 
+<button id="debounce"> 
+    Debounce 
+</button> 
+<script> 
+var button = document.getElementById("debounce"); 
+const debounce = (func, delay) => { 
+    let debounceTimer 
+    return function() { 
+      const context = this
+      const args = arguments 
+      clearTimeout(debounceTimer) 
+      debounceTimer = setTimeout(() => func.apply(context, args), delay) 
+    } 
+}  
+button.addEventListener('click', debounce(function() { 
+        alert("Hello\nNo matter how many times you" + 
+            "click the debounce button, I get " + 
+            "executed once every 3 seconds!!") 
+                        }, 3000)); 
+</script> 
+</body> 
+</html> 
+
+ ```
 
 
 ~~Think twice~~ Think thrice before work with numbers!
