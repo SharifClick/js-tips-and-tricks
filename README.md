@@ -82,6 +82,23 @@ button.addEventListener('click', debounce(function() {
 </html> 
 
  ```
+ 
+ ###### getAbsoluteUrl
+```javascipt
+
+//A good trick for getting an absolute URL from a variable string
+var getAbsoluteUrl = (function() {
+    var a;
+    return function(url) {
+        if (!a) a = document.createElement('a');
+        a.href = url;
+        return a.href;
+    };
+})();
+// Usage
+getAbsoluteUrl('/something'); // https://jhondoe.name/something
+
+```
 
 
 ~~Think twice~~ Think thrice before work with numbers!
