@@ -100,6 +100,30 @@ getAbsoluteUrl('/something'); // https://jhondoe.name/something
 
 ```
 
+###### insertRule
+```javascript
+//it enables you to change the stylesheet halfway down the line, 
+//which means you don’t have to go back and customize the entire stylesheet.
+
+var style = (function() {
+    // Create the <style> tag
+    var style = document.createElement("style");
+
+    // WebKit hack
+    style.appendChild(document.createTextNode(""));
+
+    // Add the <style> element to the page
+    document.head.appendChild(style);
+  
+    console.log(style.sheet.cssRules); // length is 0, and no rules
+
+    return style;
+})();
+style.sheet.insertRule('.foo{color:red;}', 0);
+console.log(style.sheet.cssRules); // length is 1, rule added
+
+```
+
 
 ~~Think twice~~ Think thrice before work with numbers!
 
