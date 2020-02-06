@@ -1,5 +1,11 @@
 ## JS Tips and Tricks WIP
 
+Check if year is leap year 
+```javascript
+    let isLeapYear = (year) => !(year&3||year&15&&!(year%25))
+```
+
+
 Another way of IIFE
 ```javascript
     !function(){console.log('hi')}()
