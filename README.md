@@ -1,5 +1,12 @@
 ## JS Tips and Tricks WIP
 
+
+        
+Check if date in past
+```javascript
+    let is_date_in_past = (date) => (+(new Date()) - 86400000) > +(new Date(date));
+```
+
 Check if year is leap year 
 ```javascript
     let isLeapYear = (year) => !(year&3||year&15&&!(year%25))
