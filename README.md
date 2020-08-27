@@ -213,7 +213,47 @@ poll(function() {
 // Usage
 matchesSelector(document.getElementById('myDiv'), 'div.someSelector[some-attribut]')
 ```
+###### get x,y coordinate to degree
+```javascript
 
+  function getDegrees(x, y, width, height){
+    let deltaX = (width / 2) - x;
+    let deltaY = (height / 2) - y;
+    let deg  = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 270;
+    return deg % 360;
+  }
+```
+
+###### get moving average of a given array 
+```javascript
+
+  function arr_sum(arr) {
+    var len = arr.length;
+    var num = 0;
+    while (len--) num += Number(arr[len]);
+    return num;
+  }
+  function avg(arr, idx, range) {
+    return arr_sum(arr.slice(idx - range, idx)) / range;
+  }
+  function toFixed(n) {
+    return n.toFixed(2);
+  }
+  function simple_rolling_average(arr, range) {
+    var num = range || arr.length;
+    var res = [];
+    var len = arr.length + 1;
+    var idx = num - 1;
+    while (++idx < len) {
+      res.push(toFixed(avg(arr, idx, num)));
+      //res.push(avg(arr, idx, num));
+    }
+    return res;
+  }
+  let items = [...Array(101).keys()];
+  simple_rolling_average(items, 5)
+  
+```
 
 ~~Think twice~~ Think thrice before work with numbers!
 
