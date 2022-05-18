@@ -1,7 +1,11 @@
 ## JS Tips and Tricks WIP
 
 
-        
+Get Unique items from array
+```javascript
+    let unique_items = (items) => items.filter((value, index, self) => self.indexOf(value) === index);
+```
+
 Check if date in past
 ```javascript
     let is_date_in_past = (date) => (+(new Date()) - 86400000) > +(new Date(date));
